@@ -1,4 +1,4 @@
-# Mencari Bilangan Terbesar dari 3 variable 
+# 1. Mencari Bilangan Terbesar dari 3 variable 
 Program sederhana untuk menentukan bilangan terbesar dari tiga angka yang diinputkan pengguna.
 
 ## Deskripsi Program
@@ -16,17 +16,110 @@ Program ini akan:
 # kode Program
 
 ```python
-nilai_terbesar = None
+a = int(input("Masukkan bilangan A: "))
+b = int(input("Masukkan bilangan B: "))
+c = int(input("Masukkan bilangan C: "))
 
-while True:
-    angka = int(input("Input angka (0 untuk keluar): "))
-    if angka == 0:
-        break
-    if nilai_terbesar is None or angka > nilai_terbesar:
-        nilai_terbesar = angka
-
-if nilai_terbesar is not None:
-    print(f"Angka terbesar: {nilai_terbesar}")
+if a > b:
+    if a > c:
+        print("Terbesar adalah A")
+        terbesar = a
+    else:
+        print("Terbesar adalah c")
+        terbesar = c
 else:
-    print("Tidak ada angka yang dimasukkan.")
+    if b > c:
+        print("Terbesar adalah B")
+        terbesar = b
+    else:
+        print("Terbesar adalah C")
+
+print(f"Bilangan terbesar adalah: {terbesar}")
 ```
+# contoh output program
+
+```markdown
+Masukkan bilangan A: 50
+Masukkan bilangan B: 65
+Masukkan bilangan C: 87
+Terbesar adalah C
+Bilangan terbesar adalah: 87
+```
+# cara kerja program
+
+Program bekerja dengan algoritma:
+1. Menerima input 3 bilangan (A, B, C) dari user
+2. Melakukan pengecekan dengan urutan:
+   - Apakah A > B?
+     - Jika ya: cek apakah A > C?
+       - Jika ya: A adalah terbesar
+       - Jika tidak: C adalah terbesar
+     - Jika tidak: cek apakah B > C?
+       - Jika ya: B adalah terbesar
+       - Jika tidak: C adalah terbesar
+3. Menampilkan bilangan terbesar yang ditemukan
+
+# 2.Program Mencari Bilangan Terbesar Dari N Bilangan
+
+Program sederhana untuk mencari nilai terbesar dari sekumpulan bilangan yang dimasukkan oleh pengguna menggunakan loop while True dan break statement.
+
+## Deskripsi Program
+
+Program ini akan:
+- Menggunakan while True untuk perulangan
+- Menggunakan break statement untuk menghentikan program
+- Membandingkan setiap input dengan nilai maksimum yang tersimpan
+- Menampilkan bilangan terbesar yang ditemukan
+
+## Flowchart Program
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[max = 0]
+    B --> C[/Input bilangan/]
+    C --> D{bilangan == 0?}
+    D -->|Yes| H[/Output 'Bilangan terbesar: max'/]
+    D -->|No| E{bilangan > max?}
+    E -->|Yes| F[max = bilangan]
+    E -->|No| C
+    F --> C
+    H --> I([End])
+```
+
+## Kode Program
+
+```python
+max = 0                                              
+while True:                                          
+    bilangan = int(input("Masukan bilangan(0 untuk berhenti): "))  
+    if bilangan == 0:                               
+        break                                       
+    if bilangan > max:                     
+        max = bilangan                     
+print(f"Bilangan terbesar: {max}")
+```
+
+## Untuk Contoh Output Program:
+````markdown
+Masukan bilangan(0 untuk berhenti): 5
+Masukan bilangan(0 untuk berhenti): 9
+Masukan bilangan(0 untuk berhenti): 3
+Masukan bilangan(0 untuk berhenti): 12
+Masukan bilangan(0 untuk berhenti): 7
+Masukan bilangan(0 untuk berhenti): 0
+Bilangan terbesar: 12
+````
+
+
+## Cara Kerja Program
+
+Program menginisialisasi variabel max dengan nilai 0
+Program memulai loop tak terbatas dengan while True
+Di dalam loop:
+
+Program meminta user memasukkan bilangan
+Jika user memasukkan 0, program akan keluar dari loop dengan break
+Jika bilangan yang dimasukkan lebih besar dari nilai maximum saat ini, nilai maximum diperbarui
+
+
+Setelah keluar dari loop, program menampilkan bilangan terbesar
