@@ -9,8 +9,24 @@ Program ini akan:
 3. Menentukan bilangan mana yang terbesar
 4. Menampilkan hasilnya ke layar
 
-#flowchart Program
+# flowchart Program
 
 ![flowchart](flowchartpraktikum3.png)
 
-#kode Program
+# kode Program
+
+```python
+nilai_terbesar = None
+
+while True:
+    angka = int(input("Input angka (0 untuk keluar): "))
+    if angka == 0:
+        break
+    if nilai_terbesar is None or angka > nilai_terbesar:
+        nilai_terbesar = angka
+
+if nilai_terbesar is not None:
+    print(f"Angka terbesar: {nilai_terbesar}")
+else:
+    print("Tidak ada angka yang dimasukkan.")
+```
