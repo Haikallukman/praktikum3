@@ -10,3 +10,7 @@ Program ini akan:
 4. Menampilkan hasilnya ke layar
 
 #flowchart Program
+
+![flowchart](flowchartpraktikum3.png)
+
+#kode Program
